@@ -83,6 +83,15 @@ public class PasswordGenerator {
 
         // Event listener for password generation button
         button.addActionListener(new ActionListener() {
+            /**
+             * Handles the event triggered by the password generation button.
+             * 
+             * Gets the selected password length from the dropdown menu, generates a
+             * password of that length with the generatePassword method, and displays
+             * the generated password in the passwordField text field.
+             * 
+             * @param e the ActionEvent object triggered by the button click
+             */
             public void actionPerformed(ActionEvent e) {
                 int length = (Integer) field.getSelectedItem(); // Get selected password length
                 String generatedPassword = generatePassword(length); // Generate password
@@ -93,6 +102,14 @@ public class PasswordGenerator {
         frame.setVisible(true);
     }
 
+        /**
+         * Program entry point.
+         * 
+         * Creates a new instance of the PasswordGenerator class and calls its ProgramGUI method,
+         * which constructs the program's graphical user interface.
+         * 
+         * @param args Command line arguments (not used)
+         */
     public static void main(String[] args) {
         SwingUtilities.invokeLater(() -> {
             PasswordGenerator pg = new PasswordGenerator();
